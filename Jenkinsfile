@@ -81,7 +81,7 @@ pipeline {
             kubectl --kubeconfig=/kube/dev apply -f kubernetes/service.yaml
             kubectl --kubeconfig=/kube/dev apply -f kubernetes/service-2.yaml
             kubectl --kubeconfig=/kube/dev apply -f kubernetes/deployment.yaml
-            kubectl --kubeconfig=/kube/dev apply -f kubernetes/deployment.yaml'''
+            kubectl --kubeconfig=/kube/dev apply -f kubernetes/deployment-2.yaml'''
           }
         }
 
