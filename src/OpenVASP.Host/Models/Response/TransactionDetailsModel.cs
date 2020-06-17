@@ -21,9 +21,9 @@ namespace OpenVASP.Host.Models.Response
         public string OriginatorFullName { set; get; }
         public string OriginatorVaan { set; get; }
         public string CounterPartyVaspName { get; set; }
-        public VaspInformation CounterPartyVasp { set; get; }
-        public NaturalPersonId[] OriginatorNaturalPersonIds { set; get; }
-        public JuridicalPersonId[] OriginatorJuridicalPersonIds { set; get; }
+        public VaspInformationModel CounterPartyVasp { set; get; }
+        public NaturalPersonIdResponseModel[] OriginatorNaturalPersonIds { set; get; }
+        public JuridicalPersonIdResponseModel[] OriginatorJuridicalPersonIds { set; get; }
         public string OriginatorBic { set; get; }
         public string BeneficiaryFullName { set; get; }
         public string BeneficiaryVaan { set; get; }

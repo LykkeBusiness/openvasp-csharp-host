@@ -1,7 +1,11 @@
 ﻿using System;
 using AutoMapper;
-using OpenVASP.Host.Core.Models;
+using OpenVASP.Host.Models;
 using OpenVASP.Host.Models.Response;
+using OpenVASP.Messaging.Messages.Entities;
+using PlaceOfBirth = OpenVASP.Host.Core.Models.PlaceOfBirth;
+using PostalAddress = OpenVASP.Host.Core.Models.PostalAddress;
+using Transaction = OpenVASP.Host.Core.Models.Transaction;
 
 namespace OpenVASP.Host
 {
@@ -9,6 +13,12 @@ namespace OpenVASP.Host
     {
         public AutoMapperProfile()
         {
+            CreateMap<OpenVASP.Messaging.Messages.Entities.VaspInformation, VaspInformationModel>();
+            CreateMap<OpenVASP.Messaging.Messages.Entities.PostalAddress, PostalAddressResponseModel>();
+            CreateMap<OpenVASP.Messaging.Messages.Entities.PlaceOfBirth, PlaceOfBirthResponseModel>();
+            CreateMap<OpenVASP.Messaging.Messages.Entities.NaturalPersonId, NaturalPersonIdResponseModel>();
+            CreateMap<OpenVASP.Messaging.Messages.Entities.JuridicalPersonId, JuridicalPersonIdResponseModel>();
+            
             CreateMap<Transaction, TransactionDetailsModel>(MemberList.Destination)
                 .ForMember(e => e.TransactionType, opt => opt.MapFrom(c => c.Type.ToString()))
                 .ForMember(e => e.Asset, opt => opt.MapFrom(c => c.Asset.ToString()))
